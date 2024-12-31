@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_subject_master_form" model="ir.ui.view">
+        <field name="name">subject.master.form</field>
+        <field name="model">subject.master</field>
+        <field name="arch" type="xml">
+            <form string="Subject Master">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="subject_code"/>
+                        <field name="class_level"/>
+<!--                        <field name="exam_marks_line_ids"/>-->
+                        <field name="marks"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_subject_tree" model="ir.ui.view">
+        <field name="name">subject.master.tree</field>
+        <field name="model">subject.master</field>
+        <field name="arch" type="xml">
+            <tree string="Subject Master">
+                <field name="name"/>
+                <field name="subject_code"/>
+                <field name="class_level"/>
+<!--                <field name="exam_marks_line_ids"/>-->
+                <field name="marks"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
+

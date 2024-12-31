@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="School_root"
+                name="Management"
+                sequence="1"/>
+        <odoo>
+            <!--            student master action-->
+            <record id="action_student_master" model="ir.actions.act_window">
+                <field name="name">Student Master</field>
+                <field name="res_model">student.master</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+        </odoo>
+
+
+        <menuitem
+                id="sub_school"
+                parent="School_root"
+                name="Student"
+                action="action_student_master"
+                sequence="3"/>
+
+        <!--         Action for Subject Master-->
+        <record id="action_subject_master" model="ir.actions.act_window">
+            <field name="name">Subjects</field>
+            <field name="res_model">subject.master</field>
+            <field name="view_mode">tree,form</field>
+            <!--                    <field name="view_id" ref="view_subject_tree"/>-->
+        </record>
+        <!--         Submenu for Subject Master-->
+        <menuitem id="menu_subject_master"
+                  name="Subjects"
+                  parent="School_root"
+                  action="action_subject_master"
+                  sequence="4"/>
+
+        <record id="action_exam_marks" model="ir.actions.act_window">
+            <field name="name">Exam Marks</field>
+            <field name="res_model">exam.marks</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="view_id" ref="view_exam_marks_tree"/>-->
+        </record>
+
+        <!-- Submenu for Exam Marks -->
+        <menuitem id="menu_exam_marks"
+                  name="Exam Marks"
+                  parent="School_root"
+                  action="action_exam_marks"
+                  sequence="3"/>
+
+
+        <!-- Action for Exam Marks -->
+
+        <!--this is for previous school details-->
+        <!-- Action for Student School History -->
+        <record id="action_student_school_history" model="ir.actions.act_window">
+            <field name="name">Student School History</field>
+            <field name="res_model">student.school.history</field>
+            <field name="view_mode">tree,form</field>
+<!--            <field name="target">current</field>-->
+        </record>
+        <!-- Menu Item for Student School History -->
+        <menuitem id="menu_student_school_history"
+                  name="Student School History"
+                  parent="School_root"
+                  action="action_student_school_history"
+                  sequence="5"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,119 @@
+<!--<odoo>-->
+<!--    <record id="view_student_master_form" model="ir.ui.view">-->
+<!--        <field name="name">student.master.form</field>-->
+<!--        <field name="model">student.master</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Student Master">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                        <field name="student_code"/>-->
+<!--                        <field name="date_of_birth"/>-->
+<!--                        <field name="age" readonly="1"/>-->
+<!--                        <field name="mother_name"/>-->
+<!--                        <field name="father_name"/>-->
+<!--                        <field name="address"/>-->
+<!--&lt;!&ndash;&lt;!&ndash;                        <field name="school"/>&ndash;&gt; &ndash;&gt;-->
+<!--&lt;!&ndash;                        here i did some changes&ndash;&gt;-->
+<!--                        <field name="class_level"/>-->
+<!--                        <field name="status"/>-->
+<!--                        <field name="image" widget="image"/>-->
+<!--                    </group>-->
+<!--                    <notebook>-->
+<!--                        <page string="Previous School History">-->
+<!--                            <field name="previous_school_ids">-->
+<!--                                <tree>-->
+<!--                                    <field name="school_name"/>-->
+<!--&lt;!&ndash;&lt;!&ndash;                                    <field name="syllabus_type"/>&ndash;&gt;h&ndash;&gt;-->
+<!--                                    <field name="from_year"/>-->
+<!--                                    <field name="to_year"/>-->
+<!--                                    <field name="marks"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    &lt;!&ndash; Tree View for Student Master &ndash;&gt;-->
+<!--    <record id="view_student_master_tree" model="ir.ui.view">-->
+<!--        <field name="name">student.master.tree</field>-->
+<!--        <field name="model">student.master</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Student List">-->
+<!--                <field name="student_code" string="Student Code"/>-->
+<!--                <field name="name" string="Name"/>-->
+<!--                <field name="age" string="Age"/>-->
+<!--                <field name="mother_name" string="Mother Name"/>-->
+<!--                <field name="father_name" string="Father Name"/>-->
+<!--                <field name="status" string="Status"/>-->
+<!--                <field name="class_level" string="class"/>-->
+<!--&lt;!&ndash;                here i did some changes&ndash;&gt;-->
+<!--                <field name="date_of_birth" string="Date of Birth"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+<odoo>
+    <!-- Form View for Student Master -->
+    <record id="view_student_master_form" model="ir.ui.view">
+        <field name="name">student.master.form</field>
+        <field name="model">student.master</field>
+        <field name="arch" type="xml">
+            <form string="Student Master">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Student Name" />
+                            <field name="student_code" string="Student Code"/>
+                            <field name="date_of_birth" string="Date of Birth"/>
+                            <field name="age" string="Age" readonly="1"/>
+                            <field name="mother_name" string="Mother's Name"/>
+                            <field name="father_name" string="Father's Name"/>
+                        </group>
+                        <group>
+                            <field name="class_level" string="Class"/>
+                            <field name="status" string="Status"/>
+                            <field name="address" string="Address"/>
+                            <field name="image" widget="image" class="oe_avatar"/>
+                        </group>
+                    </group>
+
+                    <!-- Notebook Tab for Previous School History -->
+                    <notebook>
+                        <page string="Previous School History">
+                            <field name="previous_school_ids">
+                                <tree string="History">
+                                    <field name="school_name" string="School Name"/>
+                                    <field name="from_year" string="From Year"/>
+                                    <field name="to_year" string="To Year"/>
+                                    <field name="marks" string="Marks"/>
+<!--                                    <field name="total_marks" string="Marks"/>-->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for Student Master -->
+    <record id="view_student_master_tree" model="ir.ui.view">
+        <field name="name">student.master.tree</field>
+        <field name="model">student.master</field>
+        <field name="arch" type="xml">
+            <tree string="Student List">
+                <field name="student_code" string="Student Code"/>
+                <field name="name" string="Name"/>
+                <field name="age" string="Age"/>
+                <field name="mother_name" string="Mother's Name"/>
+                <field name="father_name" string="Father's Name"/>
+                <field name="status" string="Status"/>
+                <field name="class_level" string="Class"/>
+                <field name="date_of_birth" string="Date of Birth"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

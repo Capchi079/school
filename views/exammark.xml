@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="view_exam_marks_form" model="ir.ui.view">-->
+<!--        <field name="name">exam.marks.form</field>-->
+<!--        <field name="model">exam.marks</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Exam Marks">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="student_id"/>-->
+<!--                            <field name="class_level" readonly="1"/>  &lt;!&ndash; Class Level is computed, make it readonly &ndash;&gt;-->
+<!--                            <field name="student_code"-->
+<!--                                   readonly="1"/> &lt;!&ndash; Student Code is computed, make it readonly &ndash;&gt;-->
+<!--                            <field name="exam_date"/>-->
+<!--                            <field name="total_subject_marks" readonly="1"/>-->
+<!--                            <field name="total_scored_marks" readonly="1"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                    <notebook>-->
+<!--                        <page string="Marks Details">-->
+<!--                            <field name="marks_line_ids">-->
+<!--                                <tree editable="bottom">-->
+<!--                                    <field name="subject_id"/>-->
+<!--                                    <field name="scored_marks"/>-->
+<!--                                    <field name="subject_marks" readonly="1"/>  &lt;!&ndash; automatically fetched &ndash;&gt;-->
+<!--                                    <field name="percentage"  widget="percent"/>-->
+<!--                                    <field name="grade"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+     <record id="view_exam_marks_form" model="ir.ui.view">
+        <field name="name">exam.marks.form</field>
+        <field name="model">exam.marks</field>
+        <field name="arch" type="xml">
+            <form string="Exam Marks">
+                <sheet>
+                    <!-- Main Group with Basic Info -->
+                    <group>
+                        <group>
+                            <field name="student_id" string="Student" required="1"/>
+                            <field name="student_code" string="Student Code" readonly="1"/>
+                            <field name="class_level" string="Class Level" readonly="1"/>
+                            <field name="exam_date" string="Exam Date" widget="date"/>
+                            <field name="total_subject_marks" string="Total Marks" readonly="1"/>
+                            <field name="total_scored_marks" string="Total Scored Marks" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Tabs for Detailed Marks Information -->
+                    <notebook>
+                        <!-- Marks Details Tab -->
+                        <page string="Marks Details">
+                            <field name="marks_line_ids">
+                                <tree editable="bottom">
+                                    <field name="subject_id" string="Subject" required="1"/>
+                                    <field name="scored_marks" string="Scored Marks" widget="float"/>
+                                    <field name="subject_marks" string="Total Marks" readonly="1"/>
+                                    <field name="percentage" string="Percentage" widget="percent" readonly="1"/>
+                                    <field name="grade" string="Grade" widget="char"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_exam_marks_tree" model="ir.ui.view">
+        <field name="name">exam.marks.tree</field>
+        <field name="model">exam.marks</field>
+        <field name="arch" type="xml">
+            <tree string="Exam Marks">
+                <field name="student_id"/>
+                <field name="class_level"/>
+                <field name="total_scored_marks" string="Your Score"/>
+                <field name="total_subject_marks"/>
+                <field name="percentage"  widget="percent"/>
+                <field name="grade"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_exam_marks" model="ir.actions.act_window">
+        <field name="name">Exam Marks Views</field>
+        <field name="res_model">exam.marks</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<odoo>-->
+<!--    <record id="view_exam_marks_form" model="ir.ui.view">-->
+<!--        <field name="name">exam.marks.form</field>-->
+<!--        <field name="model">exam.marks</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Exam Marks Calculation">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="student_id"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                         <field name="name"/>-->
+<!--                    </group>-->
+<!--                    <notebook>-->
+<!--                        <page string="Subject Marks">-->
+<!--                            <field name="marks_line_ids">-->
+<!--                                <tree>-->
+<!--                                    <field name="subject_id"/>-->
+<!--                                    <field name="scored_marks"/>-->
+<!--                                    <field name="total_marks"/>-->
+<!--                                    <field name="grade" readonly="1"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--     <record id="view_exam_marks_tree" model="ir.ui.view">-->
+<!--        <field name="name">exam.marks.tree</field>-->
+<!--        <field name="model">exam.marks</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Exam Marks">-->
+<!--                <field name="student_id"/>-->
+<!--                <field name="name"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="view_exam_marks_line_tree" model="ir.ui.view">-->
+<!--        <field name="name">exam.marks.line.tree</field>-->
+<!--        <field name="model">exam.marks.line</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Exam Marks">-->
+<!--                <field name="student_id"/>-->
+<!--                <field name="name"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+<!--here the code for exam line and exam xml both-->
+
+</odoo>

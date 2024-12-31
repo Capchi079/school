@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Tree View for Student School History -->
+    <record id="view_student_school_history_tree" model="ir.ui.view">
+        <field name="name">student.school.history.tree</field>
+        <field name="model">student.school.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="school_name"/>
+                <field name="syllabus_type"/>
+                <field name="from_year"/>
+                <field name="to_year"/>
+                <field name="marks"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Student School History -->
+    <record id="view_student_school_history_form" model="ir.ui.view">
+        <field name="name">student.school.history.form</field>
+        <field name="model">student.school.history</field>
+        <field name="arch" type="xml">
+            <form string="Student School History">
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="school_name"/>
+                        <field name="syllabus_type"/>
+                        <field name="from_year"/>
+                        <field name="to_year"/>
+                        <field name="marks"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

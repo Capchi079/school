@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <template id="portal_my_custom_home" name="Student Record" inherit_id="portal.portal.portal_my_home">-->
+<!--        <xpath expr="//div[hasclass('o_portal_docs')]" position="before">-->
+<!--            <t t-call="portal.portal_docs_entry">-->
+<!--                <t t-set="url">/my/student/</t>-->
+<!--                <t t-set="title">Student</t>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

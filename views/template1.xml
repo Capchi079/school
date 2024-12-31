@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="meee">
+        <title>Capchi</title>
+        <t t-call="website.layout">
+            <ul>
+                <t t-foreach="val" t-as="vl">
+                    <li>
+
+                        <t t-esc="vl.name"/> <br></br>
+                        <t t-esc="vl.student_code"/><br></br>
+                        <t t-esc="vl.class_level"/><br></br>
+                    </li>
+                </t>
+            </ul>
+        </t>
+    </template>
+</odoo>
